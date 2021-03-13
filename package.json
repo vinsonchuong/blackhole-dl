@@ -1,7 +1,7 @@
 {
   "name": "blackhole-dl",
   "version": "0.0.0",
-  "description": "An awesome package",
+  "description": "A CLI for downloading files from BlackHole",
   "keywords": [],
   "homepage": "https://github.com/vinsonchuong/blackhole-dl",
   "bugs": "https://github.com/vinsonchuong/blackhole-dl/issues",
@@ -13,6 +13,16 @@
     "release": "semantic-release"
   },
   "type": "module",
+  "bin": {
+    "blackhole-dl": "./bin.js"
+  },
+  "dependencies": {
+    "heliograph": "^5.0.0",
+    "ink": "^3.0.8",
+    "puppet-strings": "^4.0.1",
+    "puppet-strings-chrome": "^2.0.1",
+    "react": "^17.0.1"
+  },
   "devDependencies": {
     "ava": "^3.15.0",
     "semantic-release": "^17.4.2",
