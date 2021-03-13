@@ -1,0 +1,37 @@
+{
+  "name": "blackhole-dl",
+  "version": "0.0.0",
+  "description": "An awesome package",
+  "keywords": [],
+  "homepage": "https://github.com/vinsonchuong/blackhole-dl",
+  "bugs": "https://github.com/vinsonchuong/blackhole-dl/issues",
+  "license": "MIT",
+  "author": "Vinson Chuong <vinsonchuong@gmail.com>",
+  "repository": "vinsonchuong/blackhole-dl",
+  "scripts": {
+    "test": "xo && ava",
+    "release": "semantic-release"
+  },
+  "type": "module",
+  "devDependencies": {
+    "ava": "^3.15.0",
+    "semantic-release": "^17.4.2",
+    "xo": "^0.38.2"
+  },
+  "ava": {
+    "verbose": true
+  },
+  "xo": {
+    "prettier": true,
+    "space": 2,
+    "semicolon": false,
+    "rules": {
+      "import/no-anonymous-default-export": "off"
+    }
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
+}
