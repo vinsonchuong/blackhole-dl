@@ -10,12 +10,11 @@ test('downloading a file via CLI', async (t) => {
     await fs.unlink('hello-world.txt')
   } catch {}
 
-  await exec("./bin.js 'https://app.blackhole.run/#55913751ec1EX5YjX7bjY71n8z3sZZaaacGZ26LahXN4'")
-
-  t.is(
-    await fs.readFile('hello-world.txt', 'utf8'),
-    'Hello World!\n'
+  await exec(
+    "./bin.js 'https://app.blackhole.run/#55913751ec1EX5YjX7bjY71n8z3sZZaaacGZ26LahXN4'"
   )
+
+  t.is(await fs.readFile('hello-world.txt', 'utf8'), 'Hello World!\n')
 
   try {
     await fs.unlink('hello-world.txt')

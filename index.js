@@ -1,9 +1,10 @@
+/* eslint-disable no-await-in-loop,no-constant-condition */
 import {promises as fs} from 'fs'
 import {fromQueue} from 'heliograph'
 import {closeBrowser} from 'puppet-strings'
 import {openChrome} from 'puppet-strings-chrome'
 
-export default function(url) {
+export default function (url) {
   const events = fromQueue()
 
   async function run() {
@@ -21,10 +22,13 @@ export default function(url) {
 
       let fileName
       while (true) {
-        const progress = await page.$eval('.upload-info', node => node.textContent)
+        const progress = await page.$eval(
+          '.upload-info',
+          (node) => node.textContent
+        )
 
         if (!fileName && progress !== 'Loading...') {
-          fileName = await page.$eval('.filename', node => node.textContent)
+          fileName = await page.$eval('.filename', (node) => node.textContent)
         }
 
         events.push({fileName, progress})
@@ -47,6 +51,7 @@ export default function(url) {
       events.push(error)
     }
   }
+
   run()
 
   return events
